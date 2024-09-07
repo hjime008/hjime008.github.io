@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Website with Fade Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #b0c7f4;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .section {
+            height: 100vh; /* Full screen height for each section */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease-in-out;
+            padding: 20px;
+        }
+
+        .section img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .visible {
+            opacity: 1; /* Visible when in view */
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            color: #b0c7f4;
+            font-weight: normal;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+
+        footer img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#community">Community</a>
+        <a href="#endorsements">Endorsements</a>
+    </nav>
+
+    <div class="section" id="about">
+        <div class="header">
+            <img src="your-image.jpg" alt="Hector Jimenez">
+            <h1>About Hector Jimenez</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+        </div>
+    </div>
+
+    <div class="section" id="community">
+        <div class="header">
+            <h1>Community Involvement</h1>
+            <h2>Involved in various community activities.</h2>
+            <img src="community-image.jpg" alt="Community Activities">
+        </div>
+    </div>
+
+    <div class="section" id="endorsements">
+        <div class="header">
+            <h1>Endorsements</h1>
+            <h2>Backed by several prominent figures.</h2>
+            <img src="endorsement-image.jpg" alt="Endorsements">
+        </div>
+    </div>
+
+    <footer>
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+    </footer>
+
+    <script>
+        // JavaScript for scroll-based section visibility
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            root: null, // viewport
+            threshold: 0.3 // Trigger when 30% of the section is in view
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
