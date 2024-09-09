@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Website with Fade Sections</title>
     <style>
+        p {
+            white-space: pre-line;
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #EAE4DD; /* Off-white from the palette */
+            color: #295F98; /* Dark blue for text */
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -22,15 +26,16 @@
             display: flex;
             justify-content: center;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #295F98; /* Dark blue from the palette */
             z-index: 1000;
         }
 
         nav a {
             margin: 0 15px;
-            color: #b0c7f4;
+            color: #EAE4DD; /* Off-white for text on the dark blue background */
             text-decoration: none;
             font-size: 1.2em;
+            text-shadow: 1px 1px 2px black;
         }
 
         .section {
@@ -42,11 +47,12 @@
             opacity: 0; /* Start invisible */
             transition: opacity 1s ease-in-out;
             padding: 20px;
+            color: #295F98; /* Text will use dark blue */
         }
 
         .section img {
-            width: 300px;
-            height: auto;
+            width: flex;
+            height: flex;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -55,13 +61,26 @@
             opacity: 1; /* Visible when in view */
         }
 
-        .header {
-            text-align: center;
+        .about-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Image will take the full height of the viewport */
         }
 
-        .header img {
-            width: 200px;
-            height: auto;
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the section without distortion */
+        }
+
+        .header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
+            padding: 20px;
             border-radius: 10px;
         }
 
@@ -69,17 +88,45 @@
             font-size: 2.5em;
             margin: 15px 0;
             font-weight: bold;
+            text-shadow: 1px 1px 2px black;
         }
 
         .header h2 {
             font-size: 1.8em;
-            color: #b0c7f4;
+            color: #b4923d; /* Beige for subheadings */
             font-weight: normal;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .about-header {
+            text-align: left;
+            position: relative;
+            right: 300px;
+            z-index: 1;
+            background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .about-header h1 {
+            font-size: 2.5em;
+            margin: 15px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .about-header h2 {
+            font-size: 1.8em;
+            color: #b4923d; /* Beige for subheadings */
+            font-weight: normal;
+            text-shadow: 1px 1px 2px black;
         }
 
         footer {
             text-align: center;
             margin-top: 20px;
+            background-color: #E1D7C6; /* Light beige for footer background */
+            padding: 10px 0;
         }
 
         footer img {
@@ -101,15 +148,21 @@
         <a href="#endorsements">Endorsements</a>
     </nav>
 
-    <div class="section" id="about">
-        <div class="header">
-            <img src="your-image.jpg" alt="Hector Jimenez">
-            <h1>About Hector Jimenez</h1>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+    <div class="section" id="about" style="position: relative; padding: 0;">
+        <!-- Image stretching the entire vertical length -->
+        <div class="about-image-container">
+            <img src="your-image.jpg" alt="Hector Jimenez" class="about-image">
+        </div>
+        <!-- Overlay header content -->
+        <div class="about-header">
+            <h1>Hector Jimenez</h1>
+            <h2><p>For Val Verde USD
+                Board of Education
+            </p></h2>
         </div>
     </div>
 
-    <div class="section" id="community">
+    <div class="section" id="community" style="background-color: #E1D7C6;">
         <div class="header">
             <h1>Community Involvement</h1>
             <h2>Involved in various community activities.</h2>
@@ -117,7 +170,7 @@
         </div>
     </div>
 
-    <div class="section" id="endorsements">
+    <div class="section" id="endorsements" style="background-color: #CDC2A5;">
         <div class="header">
             <h1>Endorsements</h1>
             <h2>Backed by several prominent figures.</h2>
