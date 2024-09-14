@@ -8,7 +8,7 @@
         p {
             white-space: pre-line;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             background-color: #EAE4DD; /* Off-white from the palette */
@@ -16,6 +16,14 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+        }
+
+        /* Container to tie nav and section sizes together */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100vw; /* Ensure the container takes full width */
         }
 
         nav {
@@ -28,6 +36,7 @@
             padding: 15px;
             background-color: #295F98; /* Dark blue from the palette */
             z-index: 1000;
+            width: 100%; /* Ensure the nav takes up 100% of the width */
         }
 
         nav a {
@@ -39,6 +48,7 @@
         }
 
         .section {
+            width: 100vw; /* Ensures sections span the entire width of the viewport */
             height: 100vh; /* Full screen height for each section */
             display: flex;
             justify-content: center;
@@ -98,10 +108,11 @@
             text-shadow: 1px 1px 2px black;
         }
 
+        /* Updated .about-header CSS */
         .about-header {
-            text-align: left;
+            text-align: center; /* Center the text by default */
             position: relative;
-            right: 300px;
+            top: 300px;
             z-index: 1;
             background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
             padding: 20px;
@@ -139,42 +150,53 @@
         footer img:hover {
             opacity: 1;
         }
+        @media (min-width: 768px) {
+            .about-header {
+                text-align: left; /* Align text to the left on larger screens */
+                top: 250px;
+                margin-left: 0; /* Remove auto margin */
+                max-width: 600px; /* Set a fixed width for larger screens */
+                right: 250px; /* Optional: adjust the position if needed */
+            }
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#community">Community</a>
-        <a href="#endorsements">Endorsements</a>
-    </nav>
+    <div class="container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#community">Community</a>
+            <a href="#endorsements">Endorsements</a>
+        </nav>
 
-    <div class="section" id="about" style="position: relative; padding: 0;">
-        <!-- Image stretching the entire vertical length -->
-        <div class="about-image-container">
-            <img src="your-image.jpg" alt="Hector Jimenez" class="about-image">
+        <div class="section" id="about" style="position: relative; padding: 0;">
+            <!-- Image stretching the entire vertical length -->
+            <div class="about-image-container">
+                <img src="your-image-small.jpg" alt="Hector Jimenez" class="about-image">
+            </div>
+            <!-- Overlay header content -->
+            <div class="about-header">
+                <h1>Hector Jimenez</h1>
+                <h2><p>For Val Verde USD
+                    Board of Education
+                </p></h2>
+            </div>
         </div>
-        <!-- Overlay header content -->
-        <div class="about-header">
-            <h1>Hector Jimenez</h1>
-            <h2><p>For Val Verde USD
-                Board of Education
-            </p></h2>
-        </div>
-    </div>
 
-    <div class="section" id="community" style="background-color: #E1D7C6;">
-        <div class="header">
-            <h1>Community Involvement</h1>
-            <h2>Involved in various community activities.</h2>
-            <img src="community-image.jpg" alt="Community Activities">
+        <div class="section" id="community" style="background-color: #E1D7C6;">
+            <div class="header">
+                <h1>Community Involvement</h1>
+                <h2>Involved in various community activities.</h2>
+                <img src="community-image.jpg" alt="Community Activities">
+            </div>
         </div>
-    </div>
 
-    <div class="section" id="endorsements" style="background-color: #CDC2A5;">
-        <div class="header">
-            <h1>Endorsements</h1>
-            <h2>Backed by several prominent figures.</h2>
-            <img src="endorsement-image.jpg" alt="Endorsements">
+        <div class="section" id="endorsements" style="background-color: #CDC2A5;">
+            <div class="header">
+                <h1>Endorsements</h1>
+                <h2>Backed by several prominent figures.</h2>
+                <img src="endorsement-image.jpg" alt="Endorsements">
+            </div>
         </div>
     </div>
 
