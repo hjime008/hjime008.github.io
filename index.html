@@ -18,6 +18,11 @@
             overflow-x: hidden;
         }
 
+        /* Ensure that sections are scrolled into view with padding for the fixed nav */
+        html {
+            scroll-padding-top: 60px; /* Adjust this value based on the height of your nav bar */
+        }
+
         /* Container to tie nav and section sizes together */
         .container {
             display: flex;
