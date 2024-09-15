@@ -53,6 +53,7 @@
             height: 100vh; /* Full screen height for each section */
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
             opacity: 0; /* Start invisible */
             transition: opacity 1s ease-in-out;
@@ -71,6 +72,7 @@
 
         .section-image-container {
             display: flex;
+            align-items: center;
             justify-content: center; /* Center the image horizontally */
             max-width: 100%; /* Ensure the container doesn't exceed the page width */
             padding: 20px;
@@ -132,6 +134,7 @@
             font-size: 1.0em;
             color: #000000; /* Beige for subheadings */
             font-weight: normal;
+            padding: 5px 40px ;
         }
 
         /* Updated .about-header CSS */
@@ -214,12 +217,12 @@
             </div>
         </div>
 
-        <div class="section" id="about-me" style="background-color: #E1D7C6;"></div>
+        <div class="section" id="about-me" style="background-color: #E1D7C6;">
             <div class="header">
                 <h1>About Me</h1>
                 <h3>I grew up in Moreno Valley and Perris, and have lived in this community for over 23 years. 
-                    I am a graduate of the the Val Verde Unified School District. <p>After high school I attended UC Riverside,
-                    where I graduated with a bachelor's degree in Computer Engineering.</p>
+                    I am a graduate of the the Val Verde Unified School District. After high school I attended UC Riverside,
+                    where I graduated with a bachelor's degree in Computer Engineering.
                   </h3>
                 <div class="section-image-container">
                     <img src="community-image.jpg" alt="Community Activities" class="section-image">
@@ -251,7 +254,7 @@
     </div>
 
     <footer>
-        <a href="#"><img src="instagram_icon_bw.svg" alt="Instagram"></a>
+        <a href="#"><img src="instagram-icon.svg" alt="Instagram"></a>
     </footer>
 
     <script>
