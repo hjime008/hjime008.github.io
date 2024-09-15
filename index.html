@@ -34,7 +34,7 @@
             right: 0;
             display: flex;
             justify-content: center;
-            padding: 15px;
+            padding: 15px 0px;
             background-color: #295F98; /* Dark blue from the palette */
             z-index: 1000;
             width: 100%; /* Ensure the nav takes up 100% of the width */
@@ -44,7 +44,7 @@
             margin: 0 15px;
             color: #EAE4DD; /* Off-white for text on the dark blue background */
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.0em;
             text-shadow: 1px 1px 2px black;
         }
 
@@ -128,16 +128,16 @@
         .about-header {
             text-align: center; /* Center the text by default */
             position: relative;
-            top: 275px;
+            top: 240px;
             z-index: 1;
             background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
-            padding: 10px;
+            padding: 5px 10px 5px 10px;
             border-radius: 10px;
         }
 
         .about-header h1 {
             font-size: 2.5em;
-            margin: 15px 0;
+            margin: auto;
             font-weight: bold;
             text-shadow: 1px 1px 2px black;
         }
@@ -171,10 +171,13 @@
             .about-header {
                 text-align: left; /* Align text to the left on larger screens */
                 padding: 20px;
-                top: 250px;
                 margin-left: 0; /* Remove auto margin */
                 max-width: 600px; /* Set a fixed width for larger screens */
-                right: 225px; /* Optional: adjust the position if needed */
+                right: 200px; /* Optional: adjust the position if needed */
+            }
+
+            nav a {
+            font-size: 1.2em;
             }
         }
     </style>
@@ -190,7 +193,7 @@
         <div class="section" id="about" style="position: relative; padding: 0;">
             <!-- Image stretching the entire vertical length -->
             <div class="about-image-container">
-                <img src="your-image-small.jpg" alt="Hector Jimenez" class="about-image">
+                <img src="your-image-small-bak.jpg" alt="Hector Jimenez" class="about-image">
             </div>
             <!-- Overlay header content -->
             <div class="about-header">
