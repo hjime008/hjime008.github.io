@@ -50,14 +50,14 @@
 
         .section {
             width: 100%; /* Ensures sections span the entire width of the viewport */
-            height: 100vh; /* Full screen height for each section */
+            min-height: 100vh; /* Ensure the section is at least as tall as the viewport */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             opacity: 0; /* Start invisible */
             transition: opacity 1s ease-in-out;
-            padding: 20px;
+            padding: 50px 10px 0px 10px; /* Add padding around the section for internal spacing */
             color: #295F98; /* Text will use dark blue */
             box-sizing: border-box; /* Ensure padding is included in the width calculation */
         }
@@ -110,7 +110,7 @@
             position: relative;
             z-index: 1;
             background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
         }
 
@@ -198,7 +198,7 @@
 <body>
     <div class="container">
         <nav>
-            <a href="#about">About</a>
+            <a href="#about-me">About</a>
             <a href="#community">Community</a>
             <a href="#endorsements">Endorsements</a>
         </nav>
@@ -221,11 +221,13 @@
             <div class="header">
                 <h1>About Me</h1>
                 <h3>I grew up in Moreno Valley and Perris, and have lived in this community for over 23 years. 
-                    I am a graduate of the the Val Verde Unified School District. After high school I attended UC Riverside,
-                    where I graduated with a bachelor's degree in Computer Engineering.
+                    I myself am a graduate of the the Val Verde Unified School District.<br /> <br /> 
+                    I began school at VVUSD as an english-language learner, and graduated from high school as a valedictorian. I went on to attend UC Riverside as a first-generation college student, 
+                    where I graduated with a bachelor's degree in Computer Engineering. <br /> <br /> 
+                    I currenly work as a software engineer, and have worked as an engineer across several different industries since obtaining my degree.<br /> <br /> 
                   </h3>
                 <div class="section-image-container">
-                    <img src="community-image.jpg" alt="Community Activities" class="section-image">
+                    <img src="college-image.jpg" alt="College Image" class="section-image">
                 </div>
             </div>
         </div>
@@ -233,8 +235,8 @@
         <div class="section" id="community" style="background-color: #E1D7C6;">
             <div class="header">
                 <h1>Community Involvement</h1>
-                <h3>Throughout my time in middle school, high school, and college, I often volunteered to tutor and teach other students.
-
+                <h3>Throughout my time in middle school, high school, and college, I frequently volunteered to tutor and teach other students.
+                    Through volunteering, I realized the important roles schools play.
                 </h3>
                 <div class="section-image-container">
                     <img src="community-image.jpg" alt="Community Activities" class="section-image">
@@ -254,7 +256,7 @@
     </div>
 
     <footer>
-        <a href="#"><img src="instagram-icon.svg" alt="Instagram"></a>
+        <a href="https://www.instagram.com/jimenezforschoolboard"><img src="instagram-icon.svg" alt="Instagram"></a>
     </footer>
 
     <script>
