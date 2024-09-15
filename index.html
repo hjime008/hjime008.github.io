@@ -10,7 +10,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, sans-serif;
             background-color: #EAE4DD; /* Off-white from the palette */
             color: #295F98; /* Dark blue for text */
             margin: 0;
@@ -53,7 +53,6 @@
             height: 100vh; /* Full screen height for each section */
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;
             opacity: 0; /* Start invisible */
             transition: opacity 1s ease-in-out;
@@ -73,7 +72,6 @@
         .section-image-container {
             display: flex;
             justify-content: center; /* Center the image horizontally */
-            align-items: center; /* Center the image vertically */
             max-width: 100%; /* Ensure the container doesn't exceed the page width */
             padding: 20px;
             box-sizing: border-box; /* Ensure padding is included in the container width */
@@ -125,7 +123,15 @@
             font-size: 1.8em;
             color: #b4923d; /* Beige for subheadings */
             font-weight: normal;
-            text-shadow: 1px 1px 2px black;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .header h3 {
+            text-align: left;
+            font-family: Sailec, "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 1.0em;
+            color: #000000; /* Beige for subheadings */
+            font-weight: normal;
         }
 
         /* Updated .about-header CSS */
@@ -208,10 +214,25 @@
             </div>
         </div>
 
+        <div class="section" id="about-me" style="background-color: #E1D7C6;"></div>
+            <div class="header">
+                <h1>About Me</h1>
+                <h3>I grew up in Moreno Valley and Perris, and have lived in this community for over 23 years. 
+                    I am a graduate of the the Val Verde Unified School District. <p>After high school I attended UC Riverside,
+                    where I graduated with a bachelor's degree in Computer Engineering.</p>
+                  </h3>
+                <div class="section-image-container">
+                    <img src="community-image.jpg" alt="Community Activities" class="section-image">
+                </div>
+            </div>
+        </div>
+
         <div class="section" id="community" style="background-color: #E1D7C6;">
             <div class="header">
                 <h1>Community Involvement</h1>
-                <h2>Involved in various community activities.</h2>
+                <h3>Throughout my time in middle school, high school, and college, I often volunteered to tutor and teach other students.
+
+                </h3>
                 <div class="section-image-container">
                     <img src="community-image.jpg" alt="Community Activities" class="section-image">
                 </div>
@@ -230,9 +251,7 @@
     </div>
 
     <footer>
-        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-        <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+        <a href="#"><img src="instagram_icon_bw.svg" alt="Instagram"></a>
     </footer>
 
     <script>
