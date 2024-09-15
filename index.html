@@ -48,6 +48,21 @@
             text-shadow: 1px 1px 2px black;
         }
 
+        .about-section {
+            width: 100%; /* Ensures sections span the entire width of the viewport */
+            min-height: 100vh; /* Ensure the section is at least as tall as the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease-in-out;
+            padding: 50px 10px 0px 10px; /* Add padding around the section for internal spacing */
+            color: #295F98; /* Text will use dark blue */
+            box-sizing: border-box; /* Ensure padding is included in the width calculation */
+            overflow: visible; /* Ensure content that overflows is visible */
+        }
+
         .section {
             width: 100%; /* Ensures sections span the entire width of the viewport */
             min-height: 100vh; /* Ensure the section is at least as tall as the viewport */
@@ -60,6 +75,7 @@
             padding: 50px 10px 0px 10px; /* Add padding around the section for internal spacing */
             color: #295F98; /* Text will use dark blue */
             box-sizing: border-box; /* Ensure padding is included in the width calculation */
+            overflow: visible; /* Ensure content that overflows is visible */
         }
 
         .section img {
@@ -199,6 +215,38 @@
             max-width: 50vw;
         }
         }
+                /* Handle landscape mode on mobile devices */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .section {
+                min-height: auto; /* Remove the fixed min-height for landscape mode */
+                height: auto; /* Let the height adjust based on content */
+                padding: 10px 20px; /* Adjust padding for smaller height */
+            }
+
+            .about-image-container {
+                position: relative;
+                height: auto;
+            }
+
+            .about-header {
+                position: absolute;
+                align-items: left;
+                right: 60%;
+                max-width: 250px; /* Set a fixed width for larger screens */
+            }
+
+            .about-header h1 {
+            font-size: 1.2em;
+            }
+
+            .about-header h2 {
+                font-size: 1.0em;
+            }
+
+            .section-image {
+                max-height: 60vh; /* Constrain the image height to prevent overflow */
+                width: auto; /* Adjust the width to maintain aspect ratio */
+            }
     </style>
 </head>
 <body>
@@ -228,7 +276,7 @@
                 <h1>About Me</h1>
                 <h3>I was raised in Moreno Valley and Perris, and have lived in this community for over 23 years. 
                     I myself am a graduate of the the Val Verde Unified School District.<br /> <br /> 
-                    I began school at VVUSD as an english-language learner, and later graduated from Citrus Hill high school as a valedictorian. I went on to attend UC Riverside as a first-generation college student, 
+                    I began school at VVUSD as an english-language learner, and later graduated from Citrus Hill High School as a valedictorian. I went on to attend UC Riverside as a first-generation college student, 
                     where I graduated with a bachelor's degree in Computer Engineering. <br /> <br /> 
                     I currenly work as a software engineer, and have worked as an engineer across several different industries since obtaining my degree.<br /> <br /> 
                   </h3>
@@ -267,7 +315,7 @@
 
     <script>
         // JavaScript for scroll-based section visibility
-        const sections = document.querySelectorAll('.section');
+        const sections = document.querySelectorAll('.section, .about-section');
 
         const observerOptions = {
             root: null, // viewport
