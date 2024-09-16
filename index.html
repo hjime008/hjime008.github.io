@@ -238,7 +238,8 @@
                 /* Handle landscape mode on mobile devices */
         @media (orientation: landscape) and (max-height: 500px) {
             .section {
-                min-height: auto; /* Remove the fixed min-height for landscape mode */
+                height: auto;
+                min-height: 50vh; /* Remove the fixed min-height for landscape mode */
                 height: auto; /* Let the height adjust based on content */
                 padding: 10px 20px; /* Adjust padding for smaller height */
             }
@@ -307,7 +308,7 @@
                   <h2>Community Involvement</h2>
                     <h3>As a student in our school district, I experienced firsthand the positive impact that great teachers have on their students. 
                         These teachers inspired me to volunteer to tutor and teach students, and I actively volunteered beginning from my middle school years and all the way throughout college. 
-                        I hope to continue to serve our community on the School Board through policy and being as role model for our students, showing them that it is possible to succeed regardless of their background.
+                        I hope to continue to serve our community on the school board through policy and being as role model for our students, showing them that it is possible to succeed regardless of their background.
                     </h3>
                     <div class="section-image-container">
                         <img src="community-image.jpg" alt="Hector Jimenez Volunteer Portrait" class="section-image">
@@ -319,7 +320,7 @@
             <div class="header">
                 <h1>Mission</h1>
                 <h2>Your Neighbor, Your Voice</h2>
-                <h3>This school district is our school district, and it works better when our community is involved.
+                <h3>This school district is <u><b>our</b></u> school district, and it works better when our community is involved.
                     I will work to encourage and make it easier for the community to voice their input on school board decisions. 
                     I plan to advocate for students, and prioritize their well-being and success above any politics. 
                 <h2>Our Children, Our Future</h2>
@@ -346,7 +347,7 @@
         <div class="section" id="endorsements" style="background-color: #ffffff;">
             <div class="header">
                 <h1>Endorsements</h1>
-                <h2>Endorsed by the Riverside County Democratic Party</h2>
+                <h2>Riverside County Democratic Party</h2>
                 <div class="section-image-container">
                     <img src="riv-dem-endorsement.png" alt="Riverside County Democratic Party Endorsement Image" class="section-image">
                 </div>
@@ -367,7 +368,7 @@
 
         const observerOptions = {
             root: null, // viewport
-            threshold: 0.3 // Trigger when 30% of the section is in view
+            threshold: 0.1 // Trigger when 30% of the section is in view
         };
 
         const observer = new IntersectionObserver((entries) => {
