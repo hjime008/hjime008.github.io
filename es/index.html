@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Hector Jimenez For Val Verde Unified School Board Trustee Area 2</title>
+    <style>
+        p {
+            white-space: pre-line;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #ffffff; /* Off-white from the palette */
+            color: #295F98; /* Dark blue for text */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Ensure that sections are scrolled into view with padding for the fixed nav */
+        html {
+            scroll-padding-top: 20px; /* Adjust this value based on the height of your nav bar */
+            scroll-behavior: smooth;
+        }
+
+        /* Container to tie nav and section sizes together */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%; /* Ensure the container takes full width */
+            margin: 0 auto; /* Center the container */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0px;
+            background-color: #295F98; /* Dark blue from the palette */
+            z-index: 1000;
+            width: 100%; /* Ensure the nav takes up 100% of the width */
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #EAE4DD; /* Off-white for text on the dark blue background */
+            text-decoration: none;
+            font-size: 1.0em;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .about-section {
+            width: 100%; /* Ensures sections span the entire width of the viewport */
+            min-height: 100vh; /* Ensure the section is at least as tall as the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease-in-out;
+            padding: 50px 10px 0px 10px; /* Add padding around the section for internal spacing */
+            color: #295F98; /* Text will use dark blue */
+            box-sizing: border-box; /* Ensure padding is included in the width calculation */
+            overflow: visible; /* Ensure content that overflows is visible */
+        }
+
+        .section {
+            width: 100%; /* Ensures sections span the entire width of the viewport */
+            min-height: 100vh; /* Ensure the section is at least as tall as the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease-in-out;
+            padding: 50px 10px 0px 10px; /* Add padding around the section for internal spacing */
+            color: #295F98; /* Text will use dark blue */
+            box-sizing: border-box; /* Ensure padding is included in the width calculation */
+            overflow: visible; /* Ensure content that overflows is visible */
+        }
+
+        .section img {
+            max-width: 100%; /* Ensure the image never exceeds the container width */
+            height: flex; /* Maintain the aspect ratio */
+            border-radius: 10px;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+
+        .section-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the image horizontally */
+            max-width: 100%; /* Ensure the container doesn't exceed the page width */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the container width */
+        }
+
+        .section-image {
+            max-width: 100%; /* Ensure the image never exceeds the container width */
+            border-radius: 10px;
+            height: auto; /* Maintain the aspect ratio */
+            margin-top: 20px;
+        }
+
+        .visible {
+            opacity: 1; /* Visible when in view */
+        }
+
+        .about-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Image will take the full height of the viewport */
+            overflow: hidden; /* Prevent any overflow caused by the image */
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the section without distortion */
+        }
+
+        .header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            text-align: left;
+            font-size: 2.5em;
+            margin: 15px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .header h2 {
+            text-align: left;
+            font-size: 1.8em;
+            color: #b4923d; /* Beige for subheadings */
+            font-weight: normal;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .header h3 {
+            text-align: left;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2em;
+            color: #333333; /* Darker gray for more subtle text */
+            font-weight: 400; /* Lighter weight for a cleaner look */
+            line-height: 1.5; /* Better readability */
+            padding: 5px 30px ;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Light shadow */
+            letter-spacing: 0.5px;
+        }
+
+        .header h4 {
+            text-align: center;
+            font-family: "Montserrat", sans-serif;;
+            font-size: 1.2em;
+            color: #000000; /* Beige for subheadings */
+            font-weight: normal;
+            padding: 5px 30px ;
+        }
+
+        /* Updated .about-header CSS */
+        .about-header {
+            text-align: center; /* Center the text by default */
+            position: relative;
+            top: 240px;
+            z-index: 1;
+            background-color: rgba(234, 228, 221, 0.8); /* Add background for text readability */
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+        }
+
+        .about-header h1 {
+            font-size: 2.2em;
+            margin-top: 5px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .about-header h2 {
+            font-size: 1.5em;
+            color: #b4923d; /* Beige for subheadings */
+            font-weight: normal;
+            text-shadow: 1px 1px 2px black;
+            margin-top: 0px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 0px;
+            background-color: #ffffff; /* Light beige for footer background */
+            width: 100%; /* Ensure footer takes up full width */
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2em;
+            color: #333333; /* Darker gray for more subtle text */
+            font-weight: 400; /* Lighter weight for a cleaner look */
+            line-height: 1.5; /* Better readability */
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Light shadow */
+            letter-spacing: 0.5px;
+        }
+
+        footer img {
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+            opacity: 0.7;
+        }
+
+        footer img:hover {
+            opacity: 1;
+        }
+        @media (min-width: 768px) {
+            .about-header {
+                text-align: left; /* Align text to the left on larger screens */
+                padding: 20px;
+                margin-left: 0; /* Remove auto margin */
+                max-width: 600px; /* Set a fixed width for larger screens */
+                right: 200px; /* Optional: adjust the position if needed */
+            }
+
+            .about-header h1 {
+                font-size: 2.5em;
+                margin: auto;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px black;
+            }
+
+            .about-header h2 {
+                font-size: 1.8em;
+                color: #b4923d; /* Beige for subheadings */
+                font-weight: normal;
+                text-shadow: 1px 1px 2px black;
+            }
+
+            nav a {
+                font-size: 1.2em;
+            }
+
+            .header h3 {
+                padding: 5px 40px ;
+                max-width: 50vw;
+            }
+        }
+                /* Handle landscape mode on mobile devices */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .section {
+                height: auto;
+                min-height: 50vh; /* Remove the fixed min-height for landscape mode */
+                height: auto; /* Let the height adjust based on content */
+                padding: 10px 20px; /* Adjust padding for smaller height */
+            }
+
+            .about-image-container {
+                position: relative;
+                height: auto;
+            }
+
+            .about-header {
+                position: absolute;
+                align-items: left;
+                right: 60%;
+                max-width: 250px; /* Set a fixed width for larger screens */
+            }
+
+            .about-header h1 {
+            font-size: 1.2em;
+            }
+
+            .about-header h2 {
+                font-size: 1.0em;
+            }
+
+            .section-image {
+                max-height: 60vh; /* Constrain the image height to prevent overflow */
+                width: auto; /* Adjust the width to maintain aspect ratio */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#about-me">About</a>
+            <a href="#mission">Mission</a>
+            <a href="#endorsements">Endorsements</a>
+        </nav>
+
+        <div class="section" id="about" style="position: relative; padding: 0;">
+            <!-- Image stretching the entire vertical length -->
+            <div class="about-image-container">
+                <img src="main-portrait.jpg" alt="Hector Jimenez Headshot Portrait" class="about-image">
+            </div>
+            <!-- Overlay header content -->
+            <div class="about-header">
+                <h1>Hector Jimenez</h1>
+                <h2><p>For Val Verde USD
+                    Board of Education TA 2
+                </p></h2>
+            </div>
+        </div>
+
+        <div class="section" id="about-me" style="background-color: #ffffff;">
+            <div class="header">
+                <h1>About Me</h1>
+                <h2>Education</h2>
+                    <h3>I was raised in Moreno Valley and Perris, and have lived in this community for over 23 years. 
+                        I myself am a graduate of the the Val Verde Unified School District.<br /> <br /> 
+                        I began school at VVUSD as an english-language learner, and later graduated from Citrus Hill High School as a valedictorian. I went on to attend UC Riverside as a first-generation college student, 
+                        where I graduated with a bachelor's degree in Computer Engineering. <br /> <br /> 
+                        I currenly work as a software engineer, and have worked as an engineer across several different industries since obtaining my degree.<br /> <br /> 
+                    </h3>
+                    <div class="section-image-container">
+                        <img src="college-image-small.jpg" alt="Hector Jimenez College Portrait" class="section-image">
+                    </div>
+                  <h2>Community Involvement</h2>
+                    <h3>As a student in our school district, I experienced firsthand the positive impact that great teachers have on their students. 
+                        These teachers inspired me to volunteer to tutor and teach students, and I actively volunteered beginning from my middle school years and all the way throughout college. 
+                        I hope to continue to serve our community through policy on the school board and through being a role model for our students, showing them that it is possible to succeed regardless of their background.
+                    </h3>
+                    <div class="section-image-container">
+                        <img src="community-image.jpg" alt="Hector Jimenez Volunteer Portrait" class="section-image">
+                    </div>
+            </div>
+        </div>
+
+        <div class="section" id="mission" style="background-color: #ffffff;">
+            <div class="header">
+                <h1>Mission</h1>
+                <h2>Your Neighbor, Your Voice</h2>
+                <h3>This school district is <u><b>our</b></u> school district, and it works better when our community is involved.
+                    I will work to encourage and make it easier for the community to voice their input on school board decisions. 
+                    I plan to advocate for students, and prioritize their well-being and success above any politics. 
+                <h2>Our Children, Our Future</h2>
+                <h3>Our community’s children are our future leaders, doctors, engineers, and more. 
+                    As such, our priority as a school district should be our children. 
+                    My goal is to ensure that children in our community are given access to resources that will allow them to succeed in whatever career or education paths they chose. 
+                    I will work on restoring and expanding rigorous coursework like AP classes, and partnering with local community colleges to offer technical career training options.
+                </h3>
+                <h2>Our Staff, Our Community </h2>
+                <h3>Teachers have the power to change a student’s life, but teachers are not the only people needed to create a successful school district. 
+                    Counselors, Nurses, Janitors, Police, Security, Cafeteria staff and more are all key to making our schools safe, clean, supportive, and effective learning spaces. 
+                    The members of our community deserve to be treated well and compensated properly. 
+                    I will negotiate with our employee’s unions in good faith, and make it a focus to shift any third-party contracted jobs to internal positions wherever possible.
+                </h3>
+                <h2>A Safe and Inclusive School District </h2>
+                <h3>In a time of heavy political division, I want to ensure that our students can make their education their priority. 
+                    No student deserves to feel like an outcast due to who they are or where they are from, or worry about whether they will be safe at school. 
+                    I will work to ensure that we hold accountable those who fail to protect our students or create spaces where they may not feel safe. 
+                    I plan to help ensure that schools have staff with the training needed to ensure student safety, while being mindful that their disciplinary actions do not do more harm than good to our students.
+                </h3>                      
+            </div> 
+        </div>
+
+        <div class="section" id="endorsements" style="background-color: #ffffff;">
+            <div class="header">
+                <h1>Endorsements</h1>
+                <h2>Riverside County Democratic Party</h2>
+                <div class="section-image-container">
+                    <img src="riv-dem-endorsement.png" alt="Riverside County Democratic Party Endorsement Image" class="section-image">
+                </div>
+                <a href="https://riversidecountydemocrats.com/ad-60-endorsed-candidates/"> Riverside County Democratic Party Website </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p> Contact</p>
+        <a href="https://www.instagram.com/jimenezforschoolboard"><img src="instagram-icon.svg" alt="Instagram Icon"></a>
+        <a href="mailto:	contact@hectorforschoolboard.com"> <img src="email-icon.svg" alt="Email Icon"></a>
+    </footer>
+
+    <script>
+        // JavaScript for scroll-based section visibility
+        const sections = document.querySelectorAll('.section, .about-section');
+
+        const observerOptions = {
+            root: null, // viewport
+            threshold: 0.1 // Trigger when 30% of the section is in view
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
